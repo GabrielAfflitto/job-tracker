@@ -3,7 +3,8 @@ require 'rails_helper'
 describe "User can edit a job" do
   scenario "user sees the form page for one company" do
     company = Company.create!(name: "ESPN")
-    job = company.jobs.create!(title: "Developer", level_of_interest: 70, city: "Denver")
+    category = Category.create!(title: "Web Development")
+    job = company.jobs.create!(title: "Developer", level_of_interest: 70, city: "Denver", category: category)
 
     visit edit_company_job_path(job.company, job)
     expect(current_path).to eq(edit_company_job_path(job.company, job))
@@ -13,6 +14,7 @@ describe "User can edit a job" do
     fill_in "job[description]", with: "Not fun!"
     fill_in "job[level_of_interest]", with: 80
     fill_in "job[city]", with: "Lakewood"
+    select("Web Development", from: "job_category_id").select_option
 
     click_button "Update Job"
 

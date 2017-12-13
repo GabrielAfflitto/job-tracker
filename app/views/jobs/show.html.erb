@@ -11,3 +11,12 @@ City: <%= @job.city %>
 <br>
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
+<br>
+
+Category: <%= link_to @job.category.title, category_path(@job.category_id) %>
+<br>
+
+<%= link_to "<< Back to Jobs", company_jobs_path %>
+<br>
+
+<%= link_to "<< Back to Companies", companies_path %>
