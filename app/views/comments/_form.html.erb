@@ -1,0 +1,9 @@
+<%= form_for [ @job, @comment ] do |f| %>
+  <p>
+    <%= f.label :content, 'Your Comment' %><br/>
+    <%= f.text_field :content %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

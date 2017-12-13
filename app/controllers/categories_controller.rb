@@ -33,7 +33,6 @@ class CategoriesController < ApplicationController
 
   def edit
     @category = Category.find(params[:id])
-    # binding.pry
   end
 
   def update
