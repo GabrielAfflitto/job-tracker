@@ -1,9 +1,9 @@
 <h1>Categories</h1>
 
 <% @categories.each do |category| %>
-  <h3><%= category.title %></h3>
+  <h3><%=link_to category.title, category_path(category.id) %></h3>
   <%= link_to "Delete", category_path(category.id), method: "delete" %>
   <%= link_to "Edit", edit_category_path(category.id) %>
 <% end %>
 <br>
-<%= link_to "Create a New Category", new_category_path %>
+<p><%= link_to "Create a New Category", new_category_path %></p>
