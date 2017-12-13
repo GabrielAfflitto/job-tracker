@@ -23,6 +23,17 @@ describe "User can see all categories" do
   end
 
   it "each category has an edit link" do
-    
+    category_1 = Category.create!(title: "Music")
+    visit categories_path
+
+    click_link "Edit"
+
+    expect(current_path).to eq(edit_category_path(category_1.id))
+
+    fill_in "category[title]", with: "Construction"
+    click_button "Update"
+
+    expect(current_path).to eq(categories_path)
+    expect(page).to have_content("Construction")
   end
 end
