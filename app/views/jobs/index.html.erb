@@ -9,4 +9,8 @@ All Jobs for <strong><%= @company.name %></strong>
       <%= link_to "Delete", company_job_path(job.company, job), method: 'delete' %>
   </ul>
 <% end %>
+
+<%= render partial: 'contacts/contact' %>
+<h1>Enter your contact information</h1>
+<%= render partial: 'contacts/form'  %>
 <%= link_to "Create a New Job", new_company_job_path(@company.id) %>
