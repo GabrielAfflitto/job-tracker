@@ -2,8 +2,14 @@ class JobsSearchController < ApplicationController
 
   def index
     @jobs = Job.all
-    binding.pry
-    # if params[:sort] = "location"
-
+      if params[:sort] == "location"
+        @jobs = Job.order_by_city
+      elsif params[:sort] == "interest"
+        @jobs = Job.order_by_level_of_interest
+      elsif params[:location]
+        @jobs = Job.where(city: params[:location])
+      else
+        @jobs = Job.all
+      end
   end
 end
