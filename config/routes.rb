@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   # root 'companies#index'
 
+  get '/jobs', to: "jobs_search#index"
 
   resources :companies do
     resources :jobs
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   resources :companies do
     resources :contacts
   end
+
 
   resources :categories
   # The priority is based upon order of creation: first created -> highest priority.
