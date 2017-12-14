@@ -1,4 +1,7 @@
 <h1> <% @jobs.count_of_jobs_by_level_of_interest.each_pair do |k, v| %> </h1>
       <strong>Level of Interest:</strong> <%= k %> <p>Jobs: <%= v %></p>
-
      <% end %>
+
+<h1><% @jobs.highest_average_level_of_interest_by_company.each do |job| %></h1>
+      <strong>Company with id:</strong> <%= job[1] %> <p>Average: <%= job[0].round(1) %></p>
+    <% end %>

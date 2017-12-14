@@ -16,4 +16,9 @@ class Job < ApplicationRecord
     group(:level_of_interest).order("count_id DESC").count(:id)
   end
 
+  def self.highest_average_level_of_interest_by_company
+    company_averages = group(:company_id).average(:level_of_interest).invert.sort
+    company_averages[3..5]
+  end
+
 end
