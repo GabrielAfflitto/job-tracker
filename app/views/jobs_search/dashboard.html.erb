@@ -5,3 +5,5 @@
 <h1><% @jobs.highest_average_level_of_interest_by_company.each do |job| %></h1>
       <strong>Company with id:</strong> <%= job[1] %> <p>Average: <%= job[0].round(1) %></p>
     <% end %>
+
+<%= link_to "Companies", companies_path %>

@@ -1,12 +1,28 @@
-<h3>All Companies</h3>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {background-color: #EAF6FF;}
+      h3   {color: #2A2A72;}
+      p    {color: #232528;}
+    </style>
+  </head>
+  <body>
+    <h1>All Companies</h1>
 
-<ul>
-  <% @companies.each do |company| %>
-  <li class=company_<%= company.id %>>
-    <%= link_to company.name, company_path(company) %>:
-    <%= link_to "Edit", edit_company_path(company) %>
-    <%= link_to "Delete", company_path(company), method: "delete" %>
+    <ul>
+      <% @companies.each do |company| %>
+      <div class="compania">
+        <li class=company_<%= company.id %>>
+          <h3><%= link_to company.name, company_path(company) %>:</h3>
+          <%= link_to "Edit", edit_company_path(company) %>
+          <%= link_to "Delete", company_path(company), method: "delete" %>
 
-  </li>
-  <% end %>
-</ul>
+        </li>
+      </div>
+        <% end %>
+    </ul>
+
+    <strong><%= link_to "Dashboard", dashboard_path %></strong>
+  </body>
+</html>

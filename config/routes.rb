@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get '/jobs', to: "jobs_search#index"
   get '/dashboard', to: "jobs_search#dashboard"
+  root to: "companies#index"
 
   resources :companies do
     resources :jobs
