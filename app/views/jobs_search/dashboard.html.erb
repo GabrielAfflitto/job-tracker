@@ -1,0 +1,4 @@
+<h1> <% @jobs.count_of_jobs_by_level_of_interest.each_pair do |k, v| %> </h1>
+      <strong>Level of Interest:</strong> <%= k %> <p>Jobs: <%= v %></p>
+
+     <% end %>
