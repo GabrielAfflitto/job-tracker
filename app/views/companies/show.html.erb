@@ -1,8 +1,23 @@
-All Jobs for <strong><%= @company.name %></strong>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {background-color: #EAF6FF;}
+      h3   {color: #2A2A72;}
+      p    {color: #232528;}
+      div  {display: inline-block; padding: 17px 10px;}
+    </style>
+  </head>
+  <body>
 
-<% @company.jobs.each do |job| %>
-  <ul><%= job.title %></ul>
-<% end %>
+    All Jobs for <strong><%= @company.name %></strong>
 
-<%= render partial: 'contacts/contact', collection: @company.contacts.reverse %>
-<%= render partial: 'jobs/comment'%>
+    <% @company.jobs.each do |job| %>
+      <ul><%= job.title %></ul>
+      <hr>
+    <% end %>
+
+    <%= render partial: 'contacts/contact', collection: @company.contacts.reverse %>
+    <%= render partial: 'jobs/comment'%>
+  </body>
+</html>

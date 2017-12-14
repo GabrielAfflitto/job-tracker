@@ -1,27 +1,41 @@
-Title: <%= @job.title %>
-<br>
 
-Description: <%= @job.description %>
-<br>
+<html>
+  <head>
+    <style>
+      body {background-color: #EAF6FF;}
+      h3   {color: #2A2A72;}
+      p    {color: #232528;}
+      div  {display: inline-block; padding: 17px 10px;}
+    </style>
+  </head>
+  <body>
 
-Level of Interest: <%= @job.level_of_interest %>
-<br>
+    Title: <%= @job.title %>
+    <br>
 
-City: <%= @job.city %>
-<br>
+    Description: <%= @job.description %>
+    <br>
 
-Company: <%= link_to @job.company.name, company_path(@job.company) %>
-<br>
+    Level of Interest: <%= @job.level_of_interest %>
+    <br>
 
-Category: <%= link_to @job.category.title, category_path(@job.category_id) %>
-<br>
+    City: <%= @job.city %>
+    <br>
 
-<h2>Leave a Comment</h2>
+    Company: <%= link_to @job.company.name, company_path(@job.company) %>
+    <br>
 
-<%= render partial: 'jobs/comment', collection: @job.comments.reverse %>
-  <%= render partial: 'comments/form' %>
+    Category: <%= link_to @job.category.title, category_path(@job.category_id) %>
+    <br>
 
-<%= link_to "<< Back to Jobs", company_jobs_path %>
-<br>
+    <h2>Leave a Comment</h2>
 
-<%= link_to "<< Back to Companies", companies_path %>
+    <%= render partial: 'jobs/comment', collection: @job.comments.reverse %>
+    <%= render partial: 'comments/form' %>
+
+    <%= link_to "<< Back to Jobs", company_jobs_path %>
+    <br>
+
+    <%= link_to "<< Back to Companies", companies_path %>
+  </body>
+</html>
